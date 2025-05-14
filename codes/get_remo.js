@@ -57,3 +57,16 @@ function getCurrentTemp (json) {
 
 	return null;
 }
+
+function getID() {
+  const data = getNatureRemoData("appliances");
+
+  if (!data || data.length === 0) return;
+
+  const air = data.filter(appliance => appliance.type === 'AC');
+  if (air.length === 0) return;
+
+  const id = air[0].id;
+
+  console.log(id);
+}
