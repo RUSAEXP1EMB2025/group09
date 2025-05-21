@@ -18,7 +18,7 @@ function setSensorData(data, row) {
 
 function check_SensorData(data, json) { //室温と人感センサの条件を満たすか確認する
 
-	if (getStatus(json) == false) { //TODO 人感センサの動作調整
+	if (getStatus(json) == false) {
 
 		if (checkLastmotion() == MOTION) {
 			if (data.te >= TEMP_LIMIT1 && data.te < TEMP_LIMIT2) {
