@@ -42,6 +42,7 @@ function changeAirconTemperature(flag, currentTemp) {
 	UrlFetchApp.fetch(url, options);
 }
 
+//温度を指定する関数
 function setTemp(temp) {
 
   const payload = {
@@ -60,6 +61,7 @@ function setTemp(temp) {
 	UrlFetchApp.fetch(url, options);
 }
 
+//モードを指定する関数
 function setMode(mode) {
 
   var payload = {

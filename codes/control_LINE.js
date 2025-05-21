@@ -1,4 +1,4 @@
-function doPost(e) {
+function doPost(e) { //webhookに反応させる
   var json = JSON.parse(e.postData.contents);
   var message = json.events[0].message.text;
   var jsondata = getNatureRemoData("appliances");
@@ -36,7 +36,7 @@ function doPost(e) {
   }
 }
 
-function sendLine(situation) {
+function sendLine(situation) { //メッセージ送信用
   var message = "";
   if (situation != TELL_HEATING && situation != ALERT_HEATING && situation != TURNED_OFF_AC && situation != POWEROFF) {
     json = getNatureRemoData("appliances");

@@ -40,7 +40,7 @@ function check_SensorData(data, json) { //室温と人感センサの条件を�
 	}
 }
 
-function checkLastmotion() {
+function checkLastmotion() { //直近30分間人感センサに反応が無い場合は実行しないようにする
   var i;
   var lastdata = getLastRow(SHEETNAME);
 

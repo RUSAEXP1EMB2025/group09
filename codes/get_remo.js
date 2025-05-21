@@ -1,6 +1,6 @@
 function getNatureRemoData(endpoint) { //センサデータ取得
 	const headers = {
-		"Content-Type": "application/json;", //返り値でJSONを返すからこれが必要
+		"Content-Type": "application/json;",
 		'Authorization': 'Bearer ' + REMO_ACCESS_TOKEN,
 	};
 
@@ -12,7 +12,7 @@ function getNatureRemoData(endpoint) { //センサデータ取得
 	return JSON.parse(UrlFetchApp.fetch("https://api.nature.global/1/" + endpoint, options));
 }
 
-function getStatus(json) {
+function getStatus(json) { //エアコンの稼働状況を取得
   const data = json;
   if (!data || data.length === 0) return;
 
@@ -28,7 +28,7 @@ function getStatus(json) {
   }
 }
 
-function getMode(json) {
+function getMode(json) { //エアコンの今のモードを取得
   const data = json;
   if (!data || data.length === 0) return;
 
@@ -44,7 +44,7 @@ function getMode(json) {
   }
 }
 
-function getCurrentTemp (json) {
+function getCurrentTemp (json) { //エアコンの現在の設定温度を取得
 	const remoData = json;
 
 	for (var i = 0; i < remoData.length; i++) {
@@ -58,7 +58,7 @@ function getCurrentTemp (json) {
 	return null;
 }
 
-function getID() {
+function getID() { //エアコンのIDを取得
   const data = getNatureRemoData("appliances");
 
   if (!data || data.length === 0) return;
